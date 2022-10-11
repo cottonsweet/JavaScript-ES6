@@ -1,4 +1,4 @@
-const button = document.getElementById("버튼");
+//const button = document.getElementById("버튼");
 
 const people = {
   name: "손흥민",
@@ -39,4 +39,36 @@ function handleBtn() {
   }, 1000);
 }
 
-button.addEventListener("click", handleBtn);
+// button.addEventListener("click", handleBtn);
+
+// hello();
+
+// function hello() {
+//   console.log(안녕);
+//   let 안녕 = "Hello!";
+// }
+
+// 함수();
+// var 함수 = function () {
+//   console.log(안녕);
+//   var 안녕 = "Hello!";
+// };
+
+// let a = 1;
+// var 함수 = function () {
+//   a = 2;
+// };
+// console.log(a);
+
+// let a = 1;
+// var b = 2;
+// window.a = 3;
+// window.b = 4;
+
+// console.log(b);
+
+// for (let i = 1; i < 6; i++) {
+//   setTimeout(function () {
+//     console.log(i);
+//   }, i * 1000);
+// }

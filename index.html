@@ -7,7 +7,24 @@
     <title>ES 6</title>
   </head>
   <body>
-    <button id="버튼">버튼이에요</button>
+    <div style="display: none">모달창0</div>
+    <div style="display: none">모달창1</div>
+    <div style="display: none">모달창2</div>
+
+    <button>버튼0</button>
+    <button>버튼1</button>
+    <button>버튼2</button>
+    <script>
+      const buttons = document.querySelectorAll("button");
+      const modals = document.querySelectorAll("div");
+      for (let i = 0; i < 3; i++) {
+        buttons[i].addEventListener("click", () => {
+          modals[i].style.display = "block";
+        });
+        console.log(i);
+      }
+    </script>
+    <!-- <button id="버튼">버튼이에요</button> -->
     <!-- <script src="app.js"></script> -->
     <script src="this-arrow.js"></script>
   </body>
