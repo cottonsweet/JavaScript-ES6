@@ -25,6 +25,7 @@ const object = {
 
 const obj = {
   data: {
+    name: "반갑다",
     function() {
       console.log(this);
     },
