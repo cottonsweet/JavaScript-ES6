@@ -72,3 +72,11 @@ function handleBtn() {
 //     console.log(i);
 //   }, i * 1000);
 // }
+
+const buttons = document.querySelectorAll("button");
+const modals = document.querySelectorAll("div");
+for (let i = 0; i < 3; i++) {
+  buttons[i].addEventListener("click", () => {
+    modals[i].style.display = "block";
+  });
+}
