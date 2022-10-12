@@ -61,5 +61,8 @@ const person2 = {
 
 person.hello();
 
-person.hello.apply(person2);
-person.hello.call(person2);
+// apply는 파라미터를 array 형태로 집어넣기가 가능함.
+person.hello.apply(person2, 1);
+
+// call은 파라미터가 array 형태가 아님
+person.hello.call(person2, 1);
