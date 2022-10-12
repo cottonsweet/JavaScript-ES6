@@ -38,3 +38,28 @@ const o2 = {
 console.log(o2);
 
 // 주의할 점은 ...은 전역에서 사용하면 에러가 발생하고 {}, [], () 안에서만 사용 해야함
+
+function addSum(a, b, c) {
+  console.log(a + b + c);
+}
+
+const sumArray = [10, 20, 30];
+
+addSum(sumArray[0], sumArray[1], sumArray[2]);
+addSum.apply(undefined, sumArray);
+addSum(...sumArray);
+
+const person = {
+  hello: function () {
+    console.log(this.name + "hello !!");
+  },
+};
+
+const person2 = {
+  name: "손흥민",
+};
+
+person.hello();
+
+person.hello.apply(person2);
+person.hello.call(person2);
