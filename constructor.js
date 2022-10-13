@@ -21,7 +21,10 @@ function Student(name, age) {
 // 프로토타입에 값을 추가하면 모든 자식들이 물려받기가 가능함.
 
 // 오브젝트에 있는값을 먼저 확인하고 없으면 prototype을 검사함
+// 프로토타입은 함수에만 몰래 생성됨.
 Student.prototype.gender = "man";
+
+// 내 부모 유전자(부모의 프로토타입)를 검사하고 싶으면 자식.__proto__ = 부모
 
 const stu1 = new Student("코더", 25);
 const stu2 = new Student("철수", 25);
@@ -40,3 +43,67 @@ const product1 = new Shopitem("shirts", 50000);
 product1.vat();
 const product2 = new Shopitem("pants", 60000);
 product2.vat();
+
+const parents = {
+  name: "God",
+};
+
+const child = {};
+child.__proto__ = parents;
+
+function StudentGroup(name, age) {
+  this.name = name;
+  this.age = age;
+  this.sayHi = function () {
+    console.log(`안녕 내이름은 ${this.name} 이고 나이는 ${this.age} 살이야 !`);
+  };
+}
+
+StudentGroup.prototype.sayHi = () => {
+  console.log(`안녕 내이름은 ${this.name} 이고 나이는 ${this.age} 살이야 !`);
+  // 프로토타입에 함수를 정의하였으나 제대로 출력이 되지 않는 이유는 여기서의 this는 arrow functiond 으로 인하여 바깥 window를 불러옴
+};
+
+console.log(StudentGroup.prototype);
+
+const student1 = new StudentGroup("Kim", 20);
+student1.sayHi();
+const student2 = new StudentGroup("Park", 21);
+student2.sayHi();
+const student3 = new StudentGroup("Lee", 22);
+student3.sayHi();
+
+function Parent() {
+  this.name = "Kim";
+}
+
+var a = new Parent();
+
+a.__proto__.name = "Park";
+console.log(a.name);
+
+let arrayGood = [1, 2, 3, 4, 5, 3, 3, 3, 3, 1, 2, 65, 6, 1, 5, 12, 3, 4, 1, 2];
+
+Array.prototype.remove3 = function () {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === 3) {
+      this.splice(i, 1);
+      i--;
+    }
+  }
+};
+
+arrayGood.remove3();
+console.log(arrayGood);
+
+Array.prototype.remove = function (number) {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === number) {
+      this.splice(i, 1);
+      i--;
+    }
+  }
+};
+
+arrayGood.remove(65);
+console.log(arrayGood);
