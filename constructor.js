@@ -107,3 +107,18 @@ Array.prototype.remove = function (number) {
 
 arrayGood.remove(65);
 console.log(arrayGood);
+
+// ES5 상속기능 > Object.create(프로토타입으로 만들 object) 를 넣어서 실행시키면 오브젝트가 남음
+
+const es5Parent = {
+  name: "Kim",
+  age: 50,
+};
+
+const es5Child = Object.create(es5Parent);
+es5Child.name = "son";
+es5Child.age = 20;
+
+const es5ChildOfChild = Object.create(es5Child);
+es5ChildOfChild.name = "hyun";
+es5ChildOfChild.age = 25;
