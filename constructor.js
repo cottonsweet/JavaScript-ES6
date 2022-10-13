@@ -132,7 +132,8 @@ class es6Parent {
     // this.sayHi = function () {
     //   console.log("hello");
     // };
-  } // 콘스트럭터 밖에 함수를 적을경우 자식 오브젝트에 추가가 안됨. 부모 프로토타입에 추가됨
+  }
+  // 콘스트럭터 밖에 함수를 적을경우 자식 오브젝트에 추가가 안됨. 부모 프로토타입에 추가됨
   sayHi() {
     console.log("hello");
   }
