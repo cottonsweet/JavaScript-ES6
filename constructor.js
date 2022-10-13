@@ -17,6 +17,12 @@ function Student(name, age) {
   };
 }
 
+// 상속을 구현할 수 있는 또 하나의 문법 prototype(프로토타입) > 프로토타입은 유전자.
+// 프로토타입에 값을 추가하면 모든 자식들이 물려받기가 가능함.
+
+// 오브젝트에 있는값을 먼저 확인하고 없으면 prototype을 검사함
+Student.prototype.gender = "man";
+
 const stu1 = new Student("코더", 25);
 const stu2 = new Student("철수", 25);
 stu1.sayHi();
