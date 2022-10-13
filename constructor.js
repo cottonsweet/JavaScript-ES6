@@ -122,3 +122,25 @@ es5Child.age = 20;
 const es5ChildOfChild = Object.create(es5Child);
 es5ChildOfChild.name = "hyun";
 es5ChildOfChild.age = 25;
+
+// ES6 상속기능 > class를 사용함 (콘스트럭터를 만드는 신문법 !)
+
+class es6Parent {
+  constructor() {
+    this.name = "kim";
+    this.age = 20;
+    // this.sayHi = function () {
+    //   console.log("hello");
+    // };
+  } // 콘스트럭터 밖에 함수를 적을경우 자식 오브젝트에 추가가 안됨. 부모 프로토타입에 추가됨
+  sayHi() {
+    console.log("hello");
+  }
+}
+
+const es6Child = new es6Parent();
+
+// 아래 둘다 똑같으나 getPrototypeOf 코드가 더 직관성이 있음 둘중 하나 쓰면 됨
+
+es6Child.__proto__;
+Object.getPrototypeOf(es6Child);
