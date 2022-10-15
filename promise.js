@@ -39,6 +39,7 @@ const ajaxFunc = (url) => {
     });
   });
 };
+
 const promiseHello = ajaxFunc("https://codingapple1.github.io/hello.txt");
 
 promiseHello
